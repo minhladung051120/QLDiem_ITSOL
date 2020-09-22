@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLDSV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<div class="border border-dark p-5">
+    <div class="p-3 mb-2 bg-secondary text-white mb-5">
+        <a class="text-center"><h3>Sửa thông tin tài khoản</h3></a>
+    </div>
+    <form>
+        <div class="form-row mb-2">
+            <div class="col-md-6">
+              <label for="validate01">Họ tên </label>
+              <input type="text" class="form-control" id="validate01" required>
+            </div>
+            <div class="col-md-3">
+              <label for="validate02">CMND</label>
+              <input type="text" class="form-control" id="validate02" required>
+            </div>
+            <div class="col-md-3">
+              <label for="validate03">Ngày sinh</label>
+              <input type="text" class="form-control" id="validate03" required>
+            </div>
+          </div>
+
+        <div class="form-row mb-2">
+          <div class="col-md-6">
+            <label for="validate04">Email</label>
+            <input type="text" class="form-control" id="validate04" required>
+          </div>
+          <div class="col-md-3 ">
+            <label for="validate05">SĐT</label>
+            <input type="text" class="form-control" id="validate05" required>
+          </div>
+          <div class="col-md-3 ">
+            <label for="validate06">Giới tính</label>
+            <select class="custom-select" id="validate06" >
+              <option selected disabled value="">Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="formGroupExampleInput">Địa chỉ</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" required>
+        </div>
+
+        <div class="form-row mb-2">
+          <div class="col-md-6">
+            <label for="validate07">Chức vụ</label>
+            <select class="custom-select" id="validate07" required>
+              <option selected disabled value="">Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-6 ">
+            <label for="validate08">Khoa</label>
+            <select class="custom-select" id="validate08" >
+              <option selected disabled value="">Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row mb-1">
+            <div class="col-md-6">
+              <label for="validate09">Mã sinh viên</label>
+              <input type="text" class="form-control" id="validate09" required>
+              <div class="custom-control custom-checkbox">
+                <div class="d-flex justify-content-center">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Tự động sinh mã</label>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validate11">Khóa</label>
+              <input type="text" class="form-control" id="validate11" required>
+              <!-- <label class="d-flex justify-content-center">(Đối với sinh viên)</label> -->
+            </div>
+          </div>
+
+          <div class="form-row mb-2">
+            <div class="col-md-6">
+              <label for="validate12">Tên đăng nhập</label>
+              <input type="text" class="form-control" id="validate12" required placeholder="Mã sinh viên/ Email..."> 
+            </div>
+            <div class="col-md-6">
+              <label for="validate13">Mật khẩu mới</label>
+              <input type="text" class="form-control" id="validate13" required > 
+            </div>
+          </div>
+
+          <div class="form-row mb-2">
+            <div class="col-md-6">
+              <label for="validate14">Mật khẩu</label>
+              <input type="text" class="form-control" id="validate14" required > 
+            </div>
+            <div class="col-md-6">
+              <label for="validate15">Nhập lại mật khẩu</label>
+              <input type="text" class="form-control" id="validate15" required > 
+            </div>
+          </div>
+
+      <div class="container-fluid">
+                <div class="row d-flex justify-content-end">
+                  <div class="col-3">
+                    <button type="button" class="btn btn-danger mr-3" routerLink="/daotao/daotao-qltk">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                  </div>
+                </div>
+            </div>
+      </form>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
