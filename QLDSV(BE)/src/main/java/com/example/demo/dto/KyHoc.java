@@ -27,6 +27,10 @@ public class KyHoc {
 		this.thoiGian = thoiGian;
 		this.thoiGianKt = thoiGianKt;
 	}
+	public KyHoc() {
+		
+	}
+	
 	public String getMaKy() {
 		return maKy;
 	}

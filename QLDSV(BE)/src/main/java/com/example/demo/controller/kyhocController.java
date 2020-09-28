@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,24 +31,22 @@ public class kyhocController {
 	}
 	
 	@GetMapping("/getKyHoc/{id}")
-	public kyhoc getKyHocId(@PathVariable(value = "id") String maKy) {
-		Optional<kyhoc> optionalKh = kyHocRepository.findById(maKy);
-		kyhoc kh = optionalKh.get();
-		return kh;
+	public List<KyHoc> getKyHocId(@PathVariable(value = "id") String maKy) {
+		return kyHocRepository.getKyHocId(maKy);
 	}
 	
 	@PostMapping("/kyHoc")
-	public kyhoc createKyHoc(@RequestBody kyhoc kyhoc) {
-		return kyHocRepository.save(kyhoc);
+	public void createKyHoc(@RequestBody kyhoc kyhoc) {
+		kyHocRepository.createKyHoc(kyhoc.getMaKy(), kyhoc.getTenKy(), kyhoc.getThoiGian(), kyhoc.getThoiGianKt());
+	}
+	
+	@PutMapping("/updateKyHoc")
+	public void updateKyHoc(@RequestBody kyhoc kyhoc) {
+		kyHocRepository.updateKyHoc(kyhoc.getMaKy(), kyhoc.getTenKy(), kyhoc.getThoiGian(), kyhoc.getThoiGianKt());
 	}
 	
 	@DeleteMapping("/kyHoc/{id}")
-	public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") String maKy){
-		Optional<kyhoc> optionalKh = kyHocRepository.findById(maKy);
-		kyhoc kh = optionalKh.get();
-		kyHocRepository.delete(kh);
-		Map<String, Boolean> response = new HashMap<>();
-		response.put("deleted", Boolean.TRUE);
-		   return response;
+	public void deleteKyHoc(@PathVariable(value = "id") String maKy){
+		kyHocRepository.deleteKyHoc(maKy);
 	}
 }
