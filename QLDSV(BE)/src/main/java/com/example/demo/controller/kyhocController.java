@@ -31,7 +31,7 @@ public class kyhocController {
 	}
 	
 	@GetMapping("/getKyHoc/{id}")
-	public List<KyHoc> getKyHocId(@PathVariable(value = "id") String maKy) {
+	public KyHoc getKyHocId(@PathVariable(value = "id") String maKy) {
 		return kyHocRepository.getKyHocId(maKy);
 	}
 	

@@ -50,7 +50,7 @@ const routes: Routes = [
     {path :"danhsach-sv" ,component : DanhsachSVComponent},
     {path :"edit-diem" ,component : EditDiemComponent},
     {path :"edit-lophoc" ,component : EditLophocComponent},
-    {path :"edit-kyhoc" ,component : EditKyhocComponent},
+    {path :"edit-kyhoc/:id" ,component : EditKyhocComponent},
     {path :"edit-monhoc" ,component : EditMonhocComponent},
     {path :"edit-taikhoan" ,component : EditTaikhoanComponent},
     {path :"daotaothemsv" ,component : DaotaothemsvComponent},

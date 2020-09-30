@@ -11,26 +11,26 @@
     <div class="p-3 mb-2 bg-secondary text-white mb-5">
         <a class="text-center"><h3>Sửa thông tin kỳ học</h3></a>
     </div>
-    <form>
+    <form *ngIf="kyhoc">
         <div class="form-row mb-2">
             <div class="col-md-6">
               <label for="validate01">Mã kỳ</label>
-              <input type="text" class="form-control" id="validate01" required>
+              <input type="text" class="form-control" id="validate01" [(ngModel)]="kyhoc.maKy" name="maKy" readonly>
             </div>
             <div class="col-md-6">
               <label for="validate02">Tên kỳ học</label>
-              <input type="text" class="form-control" id="validate01" required>
+              <input type="text" class="form-control" id="validate01" required [(ngModel)]="kyhoc.tenKy" name="tenKy">
             </div>
           </div>
 
         <div class="form-row mb-2">
           <div class="col-md-6">
             <label for="validate03">Ngày bắt đầu</label>
-            <input type="text" class="form-control" id="validate03" required>
+            <input type="text" class="form-control" id="validate03" required [(ngModel)]="kyhoc.thoiGian" name="thoiGian">
           </div>
           <div class="col-md-6 ">
             <label for="validate04">Ngày kết thúc</label>
-            <input type="text" class="form-control" id="validate04" required>
+            <input type="text" class="form-control" id="validate04" required [(ngModel)]="kyhoc.thoiGianKt" name="thoiGianKt">
           </div>
         </div>
         
@@ -38,7 +38,7 @@
                 <div class="row d-flex justify-content-end">
                   <div class="col-3">
                     <button type="button" class="btn btn-danger mr-3" routerLink="/daotao/daotao-qlkyhoc">Hủy</button>
-                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                    <button type="button" class="btn btn-primary" (click)="save()">Cập nhật</button>
                   </div>
                 </div>
             </div>

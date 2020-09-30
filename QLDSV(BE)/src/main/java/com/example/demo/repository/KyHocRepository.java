@@ -33,9 +33,9 @@ public class KyHocRepository {
 		});
 	}
 
-	public List<KyHoc> getKyHocId(String maKy) {
+	public KyHoc getKyHocId(String maKy) {
 		String sql = "select ma_ky,ten_ky,thoi_gian,thoi_gian_kt from kyhoc where ma_ky ='" + maKy + "'";
-		return jdbcTemplate.query(sql, new RowMapper<KyHoc>() {
+		return jdbcTemplate.queryForObject(sql, new RowMapper<KyHoc>() {
 			public KyHoc mapRow(ResultSet rs, int rownumber) throws SQLException {
 				KyHoc kh = new KyHoc();
 				kh.setMaKy(rs.getString(1));

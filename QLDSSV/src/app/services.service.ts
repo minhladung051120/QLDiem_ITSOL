@@ -77,4 +77,9 @@ export class ServicesService {
   deleteLopHoc(lopHoc : number):Observable<any>{
     return this.http.delete(this.baseUrl+"lopHoc/"+lopHoc);
   }
+
+  updateKyHoc(kyHoc: Object): Observable<Object>{
+    return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
+
+  }
 }
