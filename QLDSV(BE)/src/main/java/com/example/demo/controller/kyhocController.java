@@ -35,6 +35,11 @@ public class kyhocController {
 		return kyHocRepository.getKyHocId(maKy);
 	}
 	
+	@GetMapping("/searchKyHoc/{id}")
+	public List<KyHoc> searchKyHoc(@PathVariable(value = "id") String tenKy) {
+		return kyHocRepository.searchKyHoc(tenKy);
+	}
+	
 	@PostMapping("/kyHoc")
 	public void createKyHoc(@RequestBody kyhoc kyhoc) {
 		kyHocRepository.createKyHoc(kyhoc.getMaKy(), kyhoc.getTenKy(), kyhoc.getThoiGian(), kyhoc.getThoiGianKt());

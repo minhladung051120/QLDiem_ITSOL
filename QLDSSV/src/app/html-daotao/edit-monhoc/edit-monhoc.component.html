@@ -11,43 +11,22 @@
     <div class="p-3 mb-2 bg-secondary text-white mb-5">
         <a class="text-center"><h3>Sửa thông tin môn học</h3></a>
     </div>
-    <form>
+    <form *ngIf="monhoc">
         <div class="form-row mb-2">
             <div class="col-md-6">
-              <label for="validate01">Môn học </label>
-              <input type="text" class="form-control" id="validate01" required>
+              <label for="validate01">Mã môn </label>
+              <input type="text" class="form-control" id="validate01" required [(ngModel)]="monhoc.maMon" name="maMon" readonly>
             </div>
             <div class="col-md-6">
-              <label for="validate02">Buổi học</label>
-              <select class="custom-select" id="validate02" >
-                <option selected disabled value="">Choose...</option>
-                <option>...</option>
-              </select>
+              <label for="validate02">Tên môn</label>
+              <input type="text" class="form-control" id="validate01" required [(ngModel)]="monhoc.tenMon" name="tenMon" >
             </div>
           </div>
 
         <div class="form-row mb-2">
           <div class="col-md-6">
-            <label for="validate03">Kỳ học</label>
-            <select class="custom-select" id="validate03">
-                <option selected disabled value="">Choose...</option>
-                <option>...</option>
-            </select>
-          </div>
-          <div class="col-md-6 ">
-            <label for="validate04">Số tiết học</label>
-            <input type="text" class="form-control" id="validate04" required>
-          </div>
-        </div>
-
-        <div class="form-row mb-2">
-          <div class="col-md-6">
-            <label for="validate05">Ngày bắt đầu</label>
-            <input type="text" class="form-control" id="validate05" required>
-          </div>
-          <div class="col-md-6">
-            <label for="validate06">Ngày kết thúc</label>
-            <input type="text" class="form-control" id="validate06" required>
+            <label for="validate03">Mã kỳ</label>
+            <input type="text" class="form-control" id="validate01" required [(ngModel)]="monhoc.maKy" name="maKy" >
           </div>
         </div>
         
@@ -56,7 +35,7 @@
                 <div class="row d-flex justify-content-end">
                   <div class="col-3">
                     <button type="button" class="btn btn-danger mr-3" routerLink="/daotao/daotao-qlmh">Hủy</button>
-                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                    <button type="button" class="btn btn-primary" (click)="save()">Cập nhật</button>
                   </div>
                 </div>
             </div>

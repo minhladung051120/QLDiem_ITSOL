@@ -70,5 +70,7 @@ public class SinhVien {
 		this.tenLop = tenLop;
 	}
 	
-	
+	public SinhVien() {
+		
+	}
 }

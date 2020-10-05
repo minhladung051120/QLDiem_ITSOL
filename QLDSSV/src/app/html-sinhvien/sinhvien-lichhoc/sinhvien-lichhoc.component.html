@@ -12,45 +12,14 @@
 
         <div class="col-6 px-4">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-lable">Học kỳ</label>
+                <label class="col-sm-4 col-form-label">Tìm kiếm :</label>
                 <div class="col-sm-6">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">pre</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                            <option selected>Chosse...</option>
-                            <option label="1">one</option>
-                            <option label="2">two</option>
-                            <option label="3">three</option>
-                        </select>
-                    </div>
+                  <input class="form-control" placeholder="Mã môn" name="search" type="text" autocomplete="off" required>
+                  <input type="submit" class="btn btn-primary" value="Tìm kiếm">
+                  <input type="button" class="btn btn-primary" value="ALL">
                 </div>
-            </div>
-        </div>
-
-        <div class="col-6 px-4">
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-lable">Môn</label>
-                <div class="col-sm-6">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">pre</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                            <option selected>Chosse...</option>
-                            <option label="1">one</option>
-                            <option label="2">two</option>
-                            <option label="3">three</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid p-3">
-            <div class="row d-flex justify-content-end">
-              <div class="col-3">
-                  <button type="button" class="btn btn-primary">Tìm kiếm</button>
               </div>
-            </div>
-        </div>
+          </div>
 
     </div>
 </div>
@@ -58,35 +27,23 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Học kỳ</th>
-            <th scope="col">Môn</th>
-            <th scope="col">Mã học phần</th>
-            <th scope="col">Thời gian</th>
-            <th scope="col">Buổi</th>
-            <th scope="col">Sĩ số</th>
-            <th scope="col">Giảng viên</th>
+            <th scope="col">Mã môn</th>
+            <th scope="col">Tên môn</th>
+            <th scope="col">Mã lớp</th>
+            <th scope="col">Mã kỳ</th>
+            <th scope="col">Điểm trung bình</th>
+            <th scope="col">Trạng thái</th>
           </tr>
         </thead>
         <tbody >
-          <tr>
-            <th scope="row">1</th>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
+          <tr *ngFor="let getLopHocBySv of getLopHocBySvs;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{getLopHocBySv.maMon}}</td>
+            <td><a routerLink="/sinhvien/sinhvien-bangdiem/{{getLopHocBySv.maLop}}">{{getLopHocBySv.tenMon}}</a></td>
+            <td>{{getLopHocBySv.maLop}}</td>
+            <td>{{getLopHocBySv.maKy}}</td>
+            <td>{{getLopHocBySv.diemTb}}</td>
+            <td>{{getLopHocBySv.trangThai}}</td>
           </tr>
           
         </tbody>
