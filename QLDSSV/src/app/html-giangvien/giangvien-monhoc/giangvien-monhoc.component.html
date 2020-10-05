@@ -10,129 +10,40 @@
 <div class="container-fluid">
     <div class="row p-3">
 
-      <div class="col-3 px-2">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-sm-3 col-form-label">Học kỳ</label>
-            <div class="col-sm-8">
-              <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Per</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Choose...</option>
-                  <option value="1">one</option>
-                  <option value="2">two</option>
-                  <option value="3">three</option>
-                </select>
-              </div>
+      <div class="col-6 px-4">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Tìm kiếm :</label>
+            <div class="col-sm-6">
+              <input class="form-control" placeholder="Mã môn" name="search" type="text" autocomplete="off" required>
+              <input type="submit" class="btn btn-primary" value="Tìm kiếm">
+              <input type="button" class="btn btn-primary" value="ALL">
             </div>
           </div>
-        </div>
       </div>
 
-      <div class="col-3 px-2">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-sm-3 col-form-label">Học kỳ</label>
-            <div class="col-sm-8">
-              <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Per</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Choose...</option>
-                  <option value="1">one</option>
-                  <option value="2">two</option>
-                  <option value="3">three</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3 px-2">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-sm-3 col-form-label">Học kỳ</label>
-            <div class="col-sm-8">
-              <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Per</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Choose...</option>
-                  <option value="1">one</option>
-                  <option value="2">two</option>
-                  <option value="3">three</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3 px-2">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-sm-3 col-form-label">Học kỳ</label>
-            <div class="col-sm-8">
-              <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Per</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Choose...</option>
-                  <option value="1">one</option>
-                  <option value="2">two</option>
-                  <option value="3">three</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
-
-    <div class="container-fluid p-3">
-      <div class="row d-flex justify-content-end">
-        <div class="col-3">
-            <button type="button" class="btn btn-primary">Tìm kiếm</button>
-        </div>
-      </div>
-  </div>
 
 
     <table class="table">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Môn học</th>
-            <th scope="col">Kỳ học</th>
-            <th scope="col">Khóa</th>
-            <th scope="col">Chuyên ngành</th>
-            <th scope="col">Buổi</th>
-            <th scope="col">Thời gian học</th>
-            <th scope="col">Mã học phần</th>
+            <th scope="col">Mã môn</th>
+            <th scope="col">Tên môn</th>
+            <th scope="col">Mã lớp</th>
+            <th scope="col">Mã kỳ</th>
           </tr>
         </thead>
         <tbody >
-          <tr>
-            <th scope="row">1</th>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
+          <tr *ngFor="let getMonHocByGv of getMonHocByGvs;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{getMonHocByGv.maMon}}</td>
+            <td><a routerLink="/giangvien/giangvien-diem/{{getMonHocByGv.maLop}}">{{getMonHocByGv.tenMon}}</a></td>
+            <td>{{getMonHocByGv.maLop}}</td>
+            <td>{{getMonHocByGv.maKy}}</td>
           
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-    
-          </tr> 
           
         </tbody>
       </table>

@@ -47,6 +47,22 @@ public class KyHocRepository {
 			}
 		});
 	}
+	
+	public List<KyHoc> searchKyHoc(String tenKy) {
+		String sql = "select ma_ky,ten_ky,thoi_gian,thoi_gian_kt from kyhoc where ten_ky like '%" + tenKy + "%'";
+		System.out.println(sql);
+		return jdbcTemplate.query(sql, new RowMapper<KyHoc>() {
+			public KyHoc mapRow(ResultSet rs, int rownumber) throws SQLException {
+				KyHoc kh = new KyHoc();
+				kh.setMaKy(rs.getString(1));
+				kh.setTenKy(rs.getString(2));
+				kh.setThoiGian(rs.getDate(3));
+				kh.setThoiGianKt(rs.getDate(4));
+
+				return kh;
+			}
+		});
+	}
 
 	public void createKyHoc(String maKy, String tenKy, Date thoiGian, Date thoiGianKt) {
 		String insertQuery = "insert into kyhoc (ma_ky,ten_ky,thoi_gian,thoi_gian_kt) values (?,?,?,?)";

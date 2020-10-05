@@ -9,7 +9,9 @@ public class MonHoc {
 	private Date thoiGian;
 	private Date thoiGianKt;
 	
-
+public MonHoc() {
+	
+}
 
 	public MonHoc(String maMon, String tenMon, String tenKy, Date thoiGian, Date thoiGianKt) {
 		super();

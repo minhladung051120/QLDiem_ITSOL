@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.SinhVien;
+import com.example.demo.dto.getLopHocBySv;
 import com.example.demo.repository.SinhVienRepository;
 
 @RestController
@@ -19,5 +20,10 @@ public class sinhvienController {
 	@GetMapping("/getSinhVien")
 	public List<SinhVien> getSinhVien() {
 		return sinhVienRepository.getSinhVien();
+	}
+	
+	@GetMapping("/getLopHocBySv")
+	public List<getLopHocBySv> getLopHocBySv() {
+		return sinhVienRepository.getLopHocBySv();
 	}
 }

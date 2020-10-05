@@ -41,6 +41,11 @@ export class ServicesService {
     return this.http.get(this.baseUrl+"getMonHoc");
   }
 
+  getMonHocId(maMon : number):Observable<any>{
+    return this.http.get(this.baseUrl+"getMonHoc/"+maMon);
+  }
+
+
   getBangDiem(){
     return this.http.get(this.baseUrl+"getBangDiem");
   }
@@ -51,6 +56,18 @@ export class ServicesService {
 
   getSinhVien(){
     return this.http.get(this.baseUrl+"getSinhVien");
+  }
+
+  getMonHocByGv(){
+    return this.http.get(this.baseUrl+"getMonHocByGv");
+  }
+
+  getLopHocBySv(){
+    return this.http.get(this.baseUrl+"getLopHocBySv");
+  }
+
+  getSvByGv(maLop : number):Observable<any>{
+    return this.http.get(this.baseUrl+"getSvByGv/"+maLop);
   }
 
   createKyHoc(kyHoc: Object): Observable<Object>{
@@ -83,7 +100,18 @@ export class ServicesService {
 
   updateKyHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
+  }
 
+  searchKyHoc(tenKy : number){
+    return this.http.get(this.baseUrl+"searchKyHoc/"+tenKy);
+  }
+
+  updateMonHoc(monHoc: Object): Observable<Object>{
+    return this.http.put(this.baseUrl+"updateMonHoc",monHoc);
+  }
+
+  searchMonHoc(maMon: number){
+    return this.http.get(this.baseUrl+"searchMonHoc/"+maMon);
   }
   getSVBoard(): Observable<string>{
     return this.http.get(this.sinhVienUrl, { responseType: 'text'});
