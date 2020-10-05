@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GiangvienBannerComponent } from './giangvien-banner.component';
+import { HomegvComponent } from './homegv.component';
 
-describe('GiangvienBannerComponent', () => {
-  let component: GiangvienBannerComponent;
-  let fixture: ComponentFixture<GiangvienBannerComponent>;
+describe('HomegvComponent', () => {
+  let component: HomegvComponent;
+  let fixture: ComponentFixture<HomegvComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GiangvienBannerComponent ]
+      declarations: [ HomegvComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GiangvienBannerComponent);
+    fixture = TestBed.createComponent(HomegvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

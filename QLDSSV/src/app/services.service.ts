@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ServicesService {
   private baseUrl = 'http://localhost:8080/';
+  private sinhVienUrl = 'http://localhost:8080/api/sinhvien';
+  private giangVienUrl = 'http://localhost:8080/api/giangvien';
+  private daoTaoUrl = 'http://localhost:8080/api/daotao';
   constructor(
     private http: HttpClient
   ) { }
@@ -81,5 +84,16 @@ export class ServicesService {
   updateKyHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
 
+  }
+  getSVBoard(): Observable<string>{
+    return this.http.get(this.sinhVienUrl, { responseType: 'text'});
+  }
+
+  getGVBoard(): Observable<string> {
+    return this.http.get(this.giangVienUrl, { responseType: 'text' });
+  }
+
+  getDTBoard(): Observable<string> {
+    return this.http.get(this.daoTaoUrl, { responseType: 'text'});
   }
 }

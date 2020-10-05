@@ -15,7 +15,6 @@ import { DaotaothemlophocComponent } from './html-daotao/daotaothemlophoc/daotao
 import { EditLophocComponent } from './html-daotao/edit-lophoc/edit-lophoc.component';
 import { DaotaoQldiemComponent } from './html-daotao/daotao-qldiem/daotao-qldiem.component';
 import { GiangvienComponent } from './html-giangvien/giangvien/giangvien.component';
-import { GiangvienBannerComponent } from './html-giangvien/giangvien-banner/giangvien-banner.component';
 import { GiangvienMonhocComponent } from './html-giangvien/giangvien-monhoc/giangvien-monhoc.component';
 import { GiangvienLophocComponent } from './html-giangvien/giangvien-lophoc/giangvien-lophoc.component';
 import { GiangvienDiemComponent } from './html-giangvien/giangvien-diem/giangvien-diem.component';
@@ -28,6 +27,8 @@ import { EditKyhocComponent } from './html-daotao/edit-kyhoc/edit-kyhoc.componen
 import { EditMonhocComponent } from './html-daotao/edit-monhoc/edit-monhoc.component';
 import { EditTaikhoanComponent } from './html-daotao/edit-taikhoan/edit-taikhoan.component';
 import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.component';
+import { HomesvComponent } from './html-sinhvien/homesv/homesv.component';
+import { HomegvComponent } from './html-giangvien/homegv/homegv.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
   {path :"login" ,component : LoginComponent},
   {path :"daotao" ,component : DaotaoComponent,
   children : [
-    {path :"", redirectTo :"daotao/bangtin" ,pathMatch:"full"},
+    {path :"", redirectTo :"bangtin" ,pathMatch:"full"},
     {path :"bangtin" ,component : DaotaobangtinComponent},
     {path :"daotao-qltk" ,component : DaotaoQLTKComponent},
     {path :"daotaothemtk" ,component : DaotaothemtkComponent},
@@ -57,16 +58,19 @@ const routes: Routes = [
   ]},
   {path :"giangvien" ,component : GiangvienComponent,
   children : [
-    {path :"", redirectTo :"giangvien-monhoc" ,pathMatch:"full"},
+    {path :"", redirectTo :"giangvien-trangchu" ,pathMatch:"full"},
+    {path :"giangvien-trangchu" ,component : HomegvComponent},
     {path :"giangvien-monhoc" ,component : GiangvienMonhocComponent},
     {path :"giangvien-lophoc" ,component : GiangvienLophocComponent},
     {path :"giangvien-diem" ,component : GiangvienDiemComponent},
     ]},
   {path :"sinhvien" , component :SinhvienComponent,
     children : [
-      {path :"", redirectTo :"sinhvien/sinhvien-lichhoc" ,pathMatch:"full"},
+      {path :"", redirectTo :"sinhvien-trangchu" ,pathMatch:"full"},
+      {path :"sinhvien-trangchu" ,component : HomesvComponent},
       {path :"sinhvien-lichhoc" ,component : SinhvienLichhocComponent},
       {path :"sinhvien-bangdiem" ,component : SinhvienBangdiemComponent}
+      
     ]}
   ]
 @NgModule({

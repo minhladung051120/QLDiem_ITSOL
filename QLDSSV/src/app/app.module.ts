@@ -26,7 +26,6 @@ import { GiangvienComponent } from './html-giangvien/giangvien/giangvien.compone
 import { GiangvienMonhocComponent } from './html-giangvien/giangvien-monhoc/giangvien-monhoc.component';
 import { GiangvienLophocComponent } from './html-giangvien/giangvien-lophoc/giangvien-lophoc.component';
 import { GiangvienDiemComponent } from './html-giangvien/giangvien-diem/giangvien-diem.component';
-import { GiangvienBannerComponent } from './html-giangvien/giangvien-banner/giangvien-banner.component';
 import { SinhvienBangdiemComponent } from './html-sinhvien/sinhvien-bangdiem/sinhvien-bangdiem.component';
 import { SinhvienLichhocComponent } from './html-sinhvien/sinhvien-lichhoc/sinhvien-lichhoc.component';
 import { SinhvienComponent } from './html-sinhvien/sinhvien/sinhvien.component';
@@ -35,8 +34,11 @@ import { EditKyhocComponent } from './html-daotao/edit-kyhoc/edit-kyhoc.componen
 import { EditMonhocComponent } from './html-daotao/edit-monhoc/edit-monhoc.component';
 import { EditDiemComponent } from './html-daotao/edit-diem/edit-diem.component';
 import { DanhsachSVComponent } from './html-daotao/danhsach-sv/danhsach-sv.component';
-import { SlideComponent } from './html-daotao//slide/slide.component';
+import { SlideComponent } from './html-daotao/slide/slide.component';
 import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.component';
+import { HomesvComponent } from './html-sinhvien/homesv/homesv.component';
+import { HomegvComponent } from './html-giangvien/homegv/homegv.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 
 @NgModule({
@@ -61,7 +63,6 @@ import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.c
     GiangvienMonhocComponent,
     GiangvienLophocComponent,
     GiangvienDiemComponent,
-    GiangvienBannerComponent,
     SinhvienBangdiemComponent,
     SinhvienLichhocComponent,
     SinhvienComponent,
@@ -72,6 +73,8 @@ import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.c
     DanhsachSVComponent,
     SlideComponent,
     DaotaothemsvComponent,
+    HomesvComponent,
+    HomegvComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,7 @@ import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.c
     Ng2SearchPipeModule,
     NgbModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
