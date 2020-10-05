@@ -66,17 +66,9 @@ const routes: Routes = [
     ]},
   {path :"sinhvien" , component :SinhvienComponent,
     children : [
-<<<<<<< HEAD
-      {path :"", redirectTo :"sinhvien-trangchu" ,pathMatch:"full"},
-      {path :"sinhvien-trangchu" ,component : HomesvComponent},
-      {path :"sinhvien-lichhoc" ,component : SinhvienLichhocComponent},
-      {path :"sinhvien-bangdiem" ,component : SinhvienBangdiemComponent}
-      
-=======
       {path :"", redirectTo :"sinhvien-lichhoc" ,pathMatch:"full"},
       {path :"sinhvien-lichhoc" ,component : SinhvienLichhocComponent},
       {path :"sinhvien-bangdiem/:id" ,component : SinhvienBangdiemComponent}
->>>>>>> 8d513dc37c8658ac15d5af62b4d7e2bec7c65f3c
     ]}
   ]
 @NgModule({

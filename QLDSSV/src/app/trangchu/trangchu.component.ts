@@ -16,9 +16,10 @@ export class TrangchuComponent implements OnInit {
     
   }
   logout() {
-    this.token.signOut();
+    
     var ketqua = confirm('Bạn có thực sự muốn thoát không?');
     if(ketqua){
+      this.token.signOut();
       this.router.navigate(['login']);
     }
     // this.router.navigate(['login']);
