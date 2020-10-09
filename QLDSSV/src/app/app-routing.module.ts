@@ -28,6 +28,10 @@ import { EditKyhocComponent } from './html-daotao/edit-kyhoc/edit-kyhoc.componen
 import { EditMonhocComponent } from './html-daotao/edit-monhoc/edit-monhoc.component';
 import { EditTaikhoanComponent } from './html-daotao/edit-taikhoan/edit-taikhoan.component';
 import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.component';
+import { DaotaothemtksvComponent } from './html-daotao/daotaothemtksv/daotaothemtksv.component';
+import { DaotaothemtkgvComponent } from './html-daotao/daotaothemtkgv/daotaothemtkgv.component';
+import { EditTaikhoansvComponent } from './html-daotao/edit-taikhoansv/edit-taikhoansv.component';
+import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taikhoangv.component';
 
 
 const routes: Routes = [
@@ -40,6 +44,8 @@ const routes: Routes = [
     {path :"bangtin" ,component : DaotaobangtinComponent},
     {path :"daotao-qltk" ,component : DaotaoQLTKComponent},
     {path :"daotaothemtk" ,component : DaotaothemtkComponent},
+    {path :"daotaothemtksv" ,component : DaotaothemtksvComponent},
+    {path :"daotaothemtkgv" ,component : DaotaothemtkgvComponent},
     {path :"daotao-qlkyhoc" ,component : DaotaoQlkyhocComponent},
     {path :"daotaothemkyhoc" ,component : DaotaothemkyhocComponent},
     {path :"daotao-qlmh" ,component : DaotaoQlmhComponent},
@@ -52,7 +58,9 @@ const routes: Routes = [
     {path :"edit-lophoc" ,component : EditLophocComponent},
     {path :"edit-kyhoc/:id" ,component : EditKyhocComponent},
     {path :"edit-monhoc/:id" ,component : EditMonhocComponent},
-    {path :"edit-taikhoan" ,component : EditTaikhoanComponent},
+    {path :"edit-taikhoan/DT/:id" ,component : EditTaikhoanComponent},
+    {path :"edit-taikhoan/SV/:id" ,component : EditTaikhoansvComponent},
+    {path :"edit-taikhoan/GV/:id" ,component : EditTaikhoangvComponent},
     {path :"daotaothemsv" ,component : DaotaothemsvComponent},
   ]},
   {path :"giangvien" ,component : GiangvienComponent,

@@ -37,6 +37,10 @@ import { EditDiemComponent } from './html-daotao/edit-diem/edit-diem.component';
 import { DanhsachSVComponent } from './html-daotao/danhsach-sv/danhsach-sv.component';
 import { SlideComponent } from './html-daotao//slide/slide.component';
 import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.component';
+import { DaotaothemtksvComponent } from './html-daotao/daotaothemtksv/daotaothemtksv.component';
+import { DaotaothemtkgvComponent } from './html-daotao/daotaothemtkgv/daotaothemtkgv.component';
+import { EditTaikhoansvComponent } from './html-daotao/edit-taikhoansv/edit-taikhoansv.component';
+import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taikhoangv.component';
 
 
 @NgModule({
@@ -72,6 +76,10 @@ import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.c
     DanhsachSVComponent,
     SlideComponent,
     DaotaothemsvComponent,
+    DaotaothemtksvComponent,
+    DaotaothemtkgvComponent,
+    EditTaikhoansvComponent,
+    EditTaikhoangvComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 export class getTaiKhoan{
      hoTen:String;
-	 tenTk:String;
+	 maTk:String;
 	 chucVu:String;
 	 email:String;
 	 diaChi:String;

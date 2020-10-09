@@ -13,41 +13,51 @@
       <div class="col-md-12"> 
         <div class="border border-dark p-2">
     <div class="p-3 mb-2 bg-secondary text-white mb-5">
-        <a class="text-center"><h3>Sửa tài khoản đào tạo</h3></a>
+        <a class="text-center"><h3>Sửa tài khoản sinh viên</h3></a>
     </div>
     
-    <form *ngIf="taikhoan">
+    <form *ngIf="taikhoandb">
       <div class="form-row mb-2">
         <div class="col-md-6">
           <label for="validate12">Tên đăng nhập</label>
-          <input type="text" class="form-control" id="validate12" required [(ngModel)]="taikhoan.maTk" name="maTk" readonly> 
+          <input type="text" class="form-control" id="validate12" required [(ngModel)]="taikhoandb.maTk" name="maTk" readonly> 
         </div>
         <div class="col-md-6">
           <label for="validate13">Mật khẩu</label>
-          <input type="password" class="form-control" id="validate13" required [(ngModel)]="taikhoan.matKhau" name="matKhau"> 
+          <input type="password" class="form-control" id="validate13" required [(ngModel)]="taikhoandb.matKhau" name="matKhau"> 
         </div>
       </div>
         <div class="form-row mb-2">
             <div class="col-md-6">
+                <label for="validate01">Mã sinh viên</label>
+                <input type="text" class="form-control" id="validate01" required [(ngModel)]="taikhoandb.maTkDb" name="maTkDb" readonly>
+              </div>
+            <div class="col-md-6">
               <label for="validate01">Họ tên </label>
-              <input type="text" class="form-control" id="validate01" required [(ngModel)]="taikhoan.hoTen" name="hoTen">
+              <input type="text" class="form-control" id="validate01" required [(ngModel)]="taikhoandb.hoTen" name="hoTen">
             </div>
           </div>
 
         <div class="form-row mb-2">
           <div class="col-md-6">
             <label for="validate04">Email</label>
-            <input type="text" class="form-control" id="validate04" required [(ngModel)]="taikhoan.email" name="email">
+            <input type="text" class="form-control" id="validate04" required [(ngModel)]="taikhoandb.email" name="email">
           </div>
           <div class="col-md-6 ">
             <label for="validate05">SĐT</label>
-            <input type="text" class="form-control" id="validate05" required [(ngModel)]="taikhoan.sdt" name="sdt">
+            <input type="text" class="form-control" id="validate05" required [(ngModel)]="taikhoandb.sdt" name="sdt">
           </div>
         </div>
 
-        <div class="form-group mb-2">
+        <div class="form-row mb-2">
+            <div class="col-md-6">
+                <label for="validate04">Khóa</label>
+                <input type="text" class="form-control" id="validate04" required [(ngModel)]="taikhoandb.khoa" name="khoa">
+              </div>
+            <div class="col-md-6 ">
           <label for="formGroupExampleInput">Địa chỉ</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" required [(ngModel)]="taikhoan.diaChi" name="diaChi">
+          <input type="text" class="form-control" id="formGroupExampleInput" required [(ngModel)]="taikhoandb.diaChi" name="diaChi">
+        </div>
         </div>
 
          

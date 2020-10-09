@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../../services.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { taiKhoan } from '../../model/taiKhoan';
+import { taiKhoanDb } from '../../model/taiKhoanDb';
 @Component({
-  selector: 'app-edit-taikhoan',
-  templateUrl: './edit-taikhoan.component.html',
-  styleUrls: ['./edit-taikhoan.component.css']
+  selector: 'app-edit-taikhoangv',
+  templateUrl: './edit-taikhoangv.component.html',
+  styleUrls: ['./edit-taikhoangv.component.css']
 })
-export class EditTaikhoanComponent implements OnInit {
-  taikhoan: taiKhoan;
+export class EditTaikhoangvComponent implements OnInit {
+  taikhoandb: taiKhoanDb;
   constructor(
     private servicesService: ServicesService,
     private activate: ActivatedRoute,
@@ -21,15 +21,15 @@ export class EditTaikhoanComponent implements OnInit {
 
   getTaiKhoanId() {
     this.activate.params.subscribe((param) => {
-      this.servicesService.getTaiKhoanId(param.id).subscribe((data) => {
+      this.servicesService.getTaiKhoanGvId(param.id).subscribe((data) => {
         console.log(data);
-        this.taikhoan = data;
+        this.taikhoandb = data;
       });
     });
   }
 
   save() {
-    this.servicesService.updateTaiKhoan(this.taikhoan).subscribe(
+    this.servicesService.updateTaiKhoan(this.taikhoandb).subscribe(
       (data) => console.log(data),
       (error) => console.log(error),
     );

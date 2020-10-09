@@ -15,7 +15,6 @@ public class taikhoan {
 	@Id
 	@Column(length = 20)
 	private String maTk;
-	private String tenTk;
 
 	private String matKhau;
 
@@ -40,11 +39,10 @@ public class taikhoan {
 
 	}
 
-	public taikhoan(String maTk, String tenTk, String matKhau, String hoTen, String email, String sdt, String diaChi,
+	public taikhoan(String maTk, String matKhau, String hoTen, String email, String sdt, String diaChi,
 			String chucVu, List<giangvien> giangviens, List<sinhvien> sinhviens) {
 		super();
 		this.maTk = maTk;
-		this.tenTk = tenTk;
 		this.matKhau = matKhau;
 		this.hoTen = hoTen;
 		this.email = email;
@@ -61,14 +59,6 @@ public class taikhoan {
 
 	public void setMaTk(String maTk) {
 		this.maTk = maTk;
-	}
-
-	public String getTenTk() {
-		return tenTk;
-	}
-
-	public void setTenTk(String tenTk) {
-		this.tenTk = tenTk;
 	}
 
 	public String getMatKhau() {
