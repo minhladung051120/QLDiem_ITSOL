@@ -26,7 +26,6 @@ import { GiangvienComponent } from './html-giangvien/giangvien/giangvien.compone
 import { GiangvienMonhocComponent } from './html-giangvien/giangvien-monhoc/giangvien-monhoc.component';
 import { GiangvienLophocComponent } from './html-giangvien/giangvien-lophoc/giangvien-lophoc.component';
 import { GiangvienDiemComponent } from './html-giangvien/giangvien-diem/giangvien-diem.component';
-import { GiangvienBannerComponent } from './html-giangvien/giangvien-banner/giangvien-banner.component';
 import { SinhvienBangdiemComponent } from './html-sinhvien/sinhvien-bangdiem/sinhvien-bangdiem.component';
 import { SinhvienLichhocComponent } from './html-sinhvien/sinhvien-lichhoc/sinhvien-lichhoc.component';
 import { SinhvienComponent } from './html-sinhvien/sinhvien/sinhvien.component';
@@ -35,12 +34,18 @@ import { EditKyhocComponent } from './html-daotao/edit-kyhoc/edit-kyhoc.componen
 import { EditMonhocComponent } from './html-daotao/edit-monhoc/edit-monhoc.component';
 import { EditDiemComponent } from './html-daotao/edit-diem/edit-diem.component';
 import { DanhsachSVComponent } from './html-daotao/danhsach-sv/danhsach-sv.component';
-import { SlideComponent } from './html-daotao//slide/slide.component';
+import { SlideComponent } from './html-daotao/slide/slide.component';
 import { DaotaothemsvComponent } from './html-daotao/daotaothemsv/daotaothemsv.component';
+<<<<<<< HEAD
 import { DaotaothemtksvComponent } from './html-daotao/daotaothemtksv/daotaothemtksv.component';
 import { DaotaothemtkgvComponent } from './html-daotao/daotaothemtkgv/daotaothemtkgv.component';
 import { EditTaikhoansvComponent } from './html-daotao/edit-taikhoansv/edit-taikhoansv.component';
 import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taikhoangv.component';
+=======
+import { HomesvComponent } from './html-sinhvien/homesv/homesv.component';
+import { HomegvComponent } from './html-giangvien/homegv/homegv.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+>>>>>>> e4c56dc277aeb2ccf5cb867249368957a4cb1337
 
 
 @NgModule({
@@ -65,7 +70,6 @@ import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taik
     GiangvienMonhocComponent,
     GiangvienLophocComponent,
     GiangvienDiemComponent,
-    GiangvienBannerComponent,
     SinhvienBangdiemComponent,
     SinhvienLichhocComponent,
     SinhvienComponent,
@@ -76,10 +80,15 @@ import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taik
     DanhsachSVComponent,
     SlideComponent,
     DaotaothemsvComponent,
+<<<<<<< HEAD
     DaotaothemtksvComponent,
     DaotaothemtkgvComponent,
     EditTaikhoansvComponent,
     EditTaikhoangvComponent,
+=======
+    HomesvComponent,
+    HomegvComponent,
+>>>>>>> e4c56dc277aeb2ccf5cb867249368957a4cb1337
   ],
   imports: [
     BrowserModule,
@@ -89,7 +98,7 @@ import { EditTaikhoangvComponent } from './html-daotao/edit-taikhoangv/edit-taik
     Ng2SearchPipeModule,
     NgbModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

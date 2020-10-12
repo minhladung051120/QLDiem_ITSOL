@@ -11,8 +11,8 @@ export class DaotaoQlkyhocComponent implements OnInit {
   kyhocs: getKyHoc[];
   page = 1;
   pageSize = 5;
-  searchText = "";
-  p: Number = 1;
+  searchText;
+  p : Number=1;
   constructor(
     private servicesService: ServicesService,
     private router: Router
@@ -27,19 +27,9 @@ export class DaotaoQlkyhocComponent implements OnInit {
     });
   }
   deleteKyHoc(maKy) {
-    this.servicesService.deleteKyHoc(maKy).subscribe((response) => {
-      this.kyhocs = this.kyhocs.filter((kyhoc) => kyhoc.maKy != maKy);
-    });
-  }
-  search(id){
-    this.servicesService.searchKyHoc(id).subscribe((data: any[]) => {
-      console.log(data);
-      this.kyhocs = data;
-    });
-  }
-  clickMethod(name: string) {
-    if(confirm("Bạn chắc chắn muốn xóa? "+name)) {
-        this.deleteKyHoc(name);
-    }
-  }
+    this.servicesService.deleteKyHoc(maKy).subscribe(response =>
+     {this.kyhocs = this.kyhocs.filter(kyhoc => kyhoc.maKy != maKy);
+ })
+}
+
 }

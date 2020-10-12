@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ServicesService {
   private baseUrl = 'http://localhost:8080/';
+  private sinhVienUrl = 'http://localhost:8080/api/sinhvien';
+  private giangVienUrl = 'http://localhost:8080/api/giangvien';
+  private daoTaoUrl = 'http://localhost:8080/api/daotao';
   constructor(
     private http: HttpClient
   ) { }
@@ -54,11 +57,6 @@ export class ServicesService {
     return this.http.get(this.baseUrl+"getMonHoc");
   }
 
-  getMonHocId(maMon : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getMonHoc/"+maMon);
-  }
-
-
   getBangDiem(){
     return this.http.get(this.baseUrl+"getBangDiem");
   }
@@ -69,18 +67,6 @@ export class ServicesService {
 
   getSinhVien(){
     return this.http.get(this.baseUrl+"getSinhVien");
-  }
-
-  getMonHocByGv(){
-    return this.http.get(this.baseUrl+"getMonHocByGv");
-  }
-
-  getLopHocBySv(){
-    return this.http.get(this.baseUrl+"getLopHocBySv");
-  }
-
-  getSvByGv(maLop : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getSvByGv/"+maLop);
   }
 
   createKyHoc(kyHoc: Object): Observable<Object>{
@@ -125,20 +111,26 @@ export class ServicesService {
 
   updateKyHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
-  }
 
+<<<<<<< HEAD
   updateLopHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateLopHoc",kyHoc);
   }
 
   searchKyHoc(tenKy : number){
     return this.http.get(this.baseUrl+"searchKyHoc/"+tenKy);
+=======
+  }
+  getSVBoard(): Observable<string>{
+    return this.http.get(this.sinhVienUrl, { responseType: 'text'});
+>>>>>>> e4c56dc277aeb2ccf5cb867249368957a4cb1337
   }
 
-  updateMonHoc(monHoc: Object): Observable<Object>{
-    return this.http.put(this.baseUrl+"updateMonHoc",monHoc);
+  getGVBoard(): Observable<string> {
+    return this.http.get(this.giangVienUrl, { responseType: 'text' });
   }
 
+<<<<<<< HEAD
   updateTaiKhoan(taiKhoan: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateTaiKhoan",taiKhoan);
   }
@@ -149,5 +141,9 @@ export class ServicesService {
 
   searchMonHoc(maMon: number){
     return this.http.get(this.baseUrl+"searchMonHoc/"+maMon);
+=======
+  getDTBoard(): Observable<string> {
+    return this.http.get(this.daoTaoUrl, { responseType: 'text'});
+>>>>>>> e4c56dc277aeb2ccf5cb867249368957a4cb1337
   }
 }
