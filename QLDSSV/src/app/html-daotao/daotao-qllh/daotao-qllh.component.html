@@ -19,7 +19,6 @@
       </div>
       <div class="col-6 px-4">
           <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary mr-3" routerLink="">Nhập/Xuất</button>
             <button type="button" class="btn btn-primary " routerLink="/daotao/daotaothemlophoc">Thêm mới</button>         
           </div>
       </div>
@@ -69,13 +68,13 @@
             <td>{{lophoc.tenMon}}</td>
             <td>{{lophoc.maGv}}</td>
             <td>{{lophoc.hoTen}}</td>
-            <td><button class="btn btn-success" routerLink="/daotao/edit-lophoc" >Sửa</button></td>
-            <td><button class="btn btn-danger" (click)="deleteLopHoc(lophoc.maLop)">Xóa</button></td>
+            <td><button class="btn btn-success" routerLink="/daotao/edit-lophoc/{{lophoc.maLop}}" >Sửa</button></td>
+            <td><button class="btn btn-danger" (click)="clickMethod(lophoc.maLop)">Xóa</button></td>
           </tr>
         </tbody>
       </table>
       <div class="container-fluid px-5">
-        <div class="row d-flex justify-content-end">
+        <div class="row d-flex justify-content-end" *ngIf="lophocs">
           <ngb-pagination 
             [(page)]="page"
             [pageSize]="pageSize"

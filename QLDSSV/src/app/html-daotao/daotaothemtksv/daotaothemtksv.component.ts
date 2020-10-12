@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { taiKhoan } from '../../model/taiKhoan';
+import { taiKhoanDb } from '../../model/taiKhoanDb';
 import { Router } from '@angular/router';
 import { ServicesService } from '../../services.service';
 @Component({
-  selector: 'app-daotaothemtk',
-  templateUrl: './daotaothemtk.component.html',
-  styleUrls: ['./daotaothemtk.component.css']
+  selector: 'app-daotaothemtksv',
+  templateUrl: './daotaothemtksv.component.html',
+  styleUrls: ['./daotaothemtksv.component.css']
 })
-export class DaotaothemtkComponent implements OnInit {
-  taikhoan: taiKhoan = new taiKhoan();
+export class DaotaothemtksvComponent implements OnInit {
+  taikhoandb: taiKhoanDb = new taiKhoanDb();
   constructor(private servicesService: ServicesService,
     private router: Router) { }
 
   ngOnInit(): void {
   }
   save() {
-    this.taikhoan.chucVu="DT";
-    this.servicesService.createTaiKhoanDt(this.taikhoan).subscribe(
+    this.taikhoandb.chucVu="SV";
+    this.servicesService.createTaiKhoanDb(this.taikhoandb).subscribe(
       (data) => console.log(data),
       (error) => console.log(error),
     );
-    this.taikhoan = new taiKhoan();
+    this.taikhoandb = new taiKhoanDb();
     // this.gotoList();
   }
   onSubmit() {

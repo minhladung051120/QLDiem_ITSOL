@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dto.ExcelGenerator;
+import com.example.demo.dto.ExcelSinhvien;
 import com.example.demo.dto.SinhVien;
 import com.example.demo.dto.getLopHocBySv;
 import com.example.demo.repository.SinhVienRepository;
@@ -39,7 +39,6 @@ public class sinhvienController {
 		return sinhVienRepository.getLopHocBySv();
 	}
 	@GetMapping(value = "/export/sinhvien")
-	
 	public void exportToexcel(HttpServletResponse response,@RequestParam(defaultValue = "")String date) throws IOException{
 //		response.setContentType("application/octet-stream");
 //		String date1= "2020-09";
@@ -50,7 +49,7 @@ public class sinhvienController {
 		response.setHeader(headerKey, headerValue);
 		
 		List<SinhVien> sinhvien = sinhVienRepository.getSinhVien();
-		ExcelGenerator excelGenerator = new ExcelGenerator(sinhvien);
+		ExcelSinhvien excelGenerator = new ExcelSinhvien(sinhvien);
 		excelGenerator.export(response);
 		
 	}

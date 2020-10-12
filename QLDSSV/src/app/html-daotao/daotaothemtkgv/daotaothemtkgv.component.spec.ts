@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomesvComponent } from './homesv.component';
+import { DaotaothemtkgvComponent } from './daotaothemtkgv.component';
 
-describe('HomesvComponent', () => {
-  let component: HomesvComponent;
-  let fixture: ComponentFixture<HomesvComponent>;
+describe('DaotaothemtkgvComponent', () => {
+  let component: DaotaothemtkgvComponent;
+  let fixture: ComponentFixture<DaotaothemtkgvComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomesvComponent ]
+      declarations: [ DaotaothemtkgvComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomesvComponent);
+    fixture = TestBed.createComponent(DaotaothemtkgvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

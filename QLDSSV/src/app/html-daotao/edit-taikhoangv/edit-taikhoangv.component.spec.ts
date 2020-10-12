@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomegvComponent } from './homegv.component';
+import { EditTaikhoangvComponent } from './edit-taikhoangv.component';
 
-describe('HomegvComponent', () => {
-  let component: HomegvComponent;
-  let fixture: ComponentFixture<HomegvComponent>;
+describe('EditTaikhoangvComponent', () => {
+  let component: EditTaikhoangvComponent;
+  let fixture: ComponentFixture<EditTaikhoangvComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomegvComponent ]
+      declarations: [ EditTaikhoangvComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomegvComponent);
+    fixture = TestBed.createComponent(EditTaikhoangvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

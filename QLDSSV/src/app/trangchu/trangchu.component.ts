@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TokenStorageService } from '../auth/token-storage.service';
 
 @Component({
   selector: 'app-trangchu',
@@ -8,22 +6,10 @@ import { TokenStorageService } from '../auth/token-storage.service';
   styleUrls: ['./trangchu.component.css']
 })
 export class TrangchuComponent implements OnInit {
-  username: string;
-  constructor(private token: TokenStorageService, private router: Router) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.username = this.token.getUsername();
-    
-  }
-  logout() {
-    
-    var ketqua = confirm('Bạn có thực sự muốn thoát không?');
-    if(ketqua){
-      this.token.signOut();
-      this.router.navigate(['login']);
-    }
-    // this.router.navigate(['login']);
-    // window.location.reload();
   }
 
 }
