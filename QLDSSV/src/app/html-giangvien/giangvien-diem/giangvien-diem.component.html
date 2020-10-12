@@ -9,19 +9,126 @@
 <body>
 <div class="container-fluid">
     <div class="row p-3">
-      <div class="col-6 px-4">
+      <div class="col-4 px-4">
         <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Tìm kiếm :</label>
+            <label  class="col-sm-2 col-form-label">Học kỳ</label>
             <div class="col-sm-6">
-              <input class="form-control" placeholder="Mã sinh viên" name="search" type="text" autocomplete="off" required>
-              <input type="submit" class="btn btn-primary" value="Tìm kiếm">
-              <input type="button" class="btn btn-primary" value="ALL">
+                <div class="col-auto my-1">
+                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
             </div>
           </div>
-      </div>
+  </div>
 
-            
+            <div class="col-4 px-4">
+                  <div class="form-group row">
+                      <label  class="col-sm-2 col-form-label">Khóa</label>
+                      <div class="col-sm-6">
+                          <div class="col-auto my-1">
+                              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                      </div>
+                    </div>
+            </div>
+
+              <div class="col-4 px-4">
+                <div class="form-group row">
+                    <label  class="col-sm-4 col-form-label">Chuyên ngành</label>
+                    <div class="col-sm-6">
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                              <option selected>Choose...</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                    </div>
+                  </div>
+          </div>
+
+                    <div class="col-4 px-4">
+                      <div class="form-group row">
+                          <label  class="col-sm-2 col-form-label">Lớp</label>
+                          <div class="col-sm-6">
+                              <div class="col-auto my-1">
+                                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                </div>
+                          </div>
+                        </div>
+                  </div>
+
+                <div class="col-4 px-4">
+                  <div class="form-group row">
+                      <label  class="col-sm-2 col-form-label">Môn</label>
+                      <div class="col-sm-6">
+                          <div class="col-auto my-1">
+                              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+
+              <div class="col-4 px-4">
+                <div class="form-group row">
+                    <label  class="col-sm-4 col-form-label">Sinh viên</label>
+                    <div class="col-sm-6">
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                              <option selected>Choose...</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                    </div>
+                  </div>
+              </div>
       </div>
+    </div>
+
+
+    <div class="container-fluid p-3">
+        <div class="row">
+        <div class="col-6 px-3">
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-primary">Tìm kiếm</button>
+            </div>
+        </div>
+        <div class="col-6 px-3">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary mr-3" >Xuất excel</button>
+              <button type="button" class="btn btn-primary mr-3" >Nhập từ excel</button>
+              <button type="button" class="btn btn-primary " >Nhập điểm</button>
+            </div>
+        </div>
+        </div>
     </div>
 
 
@@ -29,25 +136,41 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Mã SV</th>
-            <th scope="col">Họ tên</th>
-            <th scope="col">Điểm trên lớp</th>
+            <th scope="col">khóa</th>
+            <th scope="col">Chuyên ngành</th>
+            <th scope="col">Môn</th>
+            <th scope="col">Lớp</th>
+            <th scope="col">Tên sinh viên</th>
+            <th scope="col">Điểm điều kiện</th>
             <th scope="col">Điểm cuối kỳ</th>
             <th scope="col">Điểm trung bình</th>
-            <th scope="col">Mã lớp</th>
           </tr>
         </thead>
         <tbody >
-          <tr *ngFor="let getSvByGv of getSvByGvs;let i = index">
-            <th scope="row">{{i+1}}</th>
-            <td>{{getSvByGv.maSv}}</td>
-            <td>{{getSvByGv.hoTen}}</td>
-            <td>{{getSvByGv.diemTl}}</td>
-            <td>{{getSvByGv.diemCk}}</td>
-            <td>{{getSvByGv.diemTb}}</td>
-            <td>{{getSvByGv.maLop}}</td>
+          <tr>
+            <th scope="row">1</th>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
           </tr>
-         
+          <tr>
+            <th scope="row">1</th>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          
+        </tbody>
       </table>
     </body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

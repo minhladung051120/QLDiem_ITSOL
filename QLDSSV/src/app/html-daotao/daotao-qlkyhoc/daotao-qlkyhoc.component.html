@@ -13,9 +13,7 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Tìm kiếm :</label>
             <div class="col-sm-6">
-              <input class="form-control" placeholder="Tên kỳ" name="search" [(ngModel)]="searchText" type="text" autocomplete="off" required>
-              <input type="submit" class="btn btn-primary" (click)="search(searchText)" value="Tìm kiếm">
-              <input type="button" class="btn btn-primary" (click)="kyHoc()" value="ALL">
+              <input class="form-control" placeholder="Tìm kiếm" name="search" [(ngModel)]="searchText" type="text" autocomplete="off">
             </div>
           </div>
       </div>
@@ -49,7 +47,7 @@
             </th>
           </tr>
         </thead>
-        <tbody *ngFor="let kyhoc of kyhocs |slice: (page-1) * pageSize:(page-1) * pageSize + pageSize;let i = index">
+        <tbody *ngFor="let kyhoc of kyhocs  |filter:searchText |slice: (page-1) * pageSize:(page-1) * pageSize + pageSize;let i = index">
           <tr>
             <th scope="row">{{i+1}}</th>
             <td>{{kyhoc.maKy}}</td>
@@ -57,7 +55,7 @@
             <td>{{kyhoc.thoiGian}}</td>
             <td>{{kyhoc.thoiGianKt}}</td>
             <td><button class="btn btn-success" routerLink="/daotao/edit-kyhoc/{{kyhoc.maKy}}">Sửa</button></td>
-            <td><button class="btn btn-danger" (click)="clickMethod(kyhoc.maKy)">Xóa</button></td>
+            <td><button class="btn btn-danger" (click)="deleteKyHoc(kyhoc.maKy)">Xóa</button></td>
           </tr>
         </tbody>
       </table>

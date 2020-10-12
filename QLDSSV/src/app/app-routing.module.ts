@@ -52,7 +52,7 @@ const routes: Routes = [
     {path :"edit-diem" ,component : EditDiemComponent},
     {path :"edit-lophoc" ,component : EditLophocComponent},
     {path :"edit-kyhoc/:id" ,component : EditKyhocComponent},
-    {path :"edit-monhoc/:id" ,component : EditMonhocComponent},
+    {path :"edit-monhoc" ,component : EditMonhocComponent},
     {path :"edit-taikhoan" ,component : EditTaikhoanComponent},
     {path :"daotaothemsv" ,component : DaotaothemsvComponent},
   ]},
@@ -62,13 +62,15 @@ const routes: Routes = [
     {path :"giangvien-trangchu" ,component : HomegvComponent},
     {path :"giangvien-monhoc" ,component : GiangvienMonhocComponent},
     {path :"giangvien-lophoc" ,component : GiangvienLophocComponent},
-    {path :"giangvien-diem/:id" ,component : GiangvienDiemComponent},
+    {path :"giangvien-diem" ,component : GiangvienDiemComponent},
     ]},
   {path :"sinhvien" , component :SinhvienComponent,
     children : [
-      {path :"", redirectTo :"sinhvien-lichhoc" ,pathMatch:"full"},
+      {path :"", redirectTo :"sinhvien-trangchu" ,pathMatch:"full"},
+      {path :"sinhvien-trangchu" ,component : HomesvComponent},
       {path :"sinhvien-lichhoc" ,component : SinhvienLichhocComponent},
-      {path :"sinhvien-bangdiem/:id" ,component : SinhvienBangdiemComponent}
+      {path :"sinhvien-bangdiem" ,component : SinhvienBangdiemComponent}
+      
     ]}
   ]
 @NgModule({
