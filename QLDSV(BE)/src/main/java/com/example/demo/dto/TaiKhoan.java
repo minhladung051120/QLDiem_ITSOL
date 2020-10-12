@@ -2,18 +2,21 @@ package com.example.demo.dto;
 
 public class TaiKhoan {
 	private String hoTen;
-	private String tenTk;
+	private String maTk;
 	private String chucVu;
 	private String email;
 	private String diaChi;
+	private String sdt;
 	
-	public TaiKhoan(String hoTen, String tenTk, String chucVu, String email, String diaChi) {
-		super();
-		this.hoTen = hoTen;
-		this.tenTk = tenTk;
-		this.chucVu = chucVu;
-		this.email = email;
-		this.diaChi = diaChi;
+	
+	public String getSdt() {
+		return sdt;
+	}
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+	public TaiKhoan() {
+		// TODO Auto-generated constructor stub
 	}
 	public String getHoTen() {
 		return hoTen;
@@ -21,11 +24,12 @@ public class TaiKhoan {
 	public void setHoTen(String hoTen) {
 		this.hoTen = hoTen;
 	}
-	public String getTenTk() {
-		return tenTk;
+
+	public String getMaTk() {
+		return maTk;
 	}
-	public void setTenTk(String tenTk) {
-		this.tenTk = tenTk;
+	public void setMaTk(String maTk) {
+		this.maTk = maTk;
 	}
 	public String getChucVu() {
 		return chucVu;

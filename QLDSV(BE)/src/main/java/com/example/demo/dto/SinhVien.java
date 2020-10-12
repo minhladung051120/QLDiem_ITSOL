@@ -9,7 +9,6 @@ public class SinhVien {
 	private String diaChi;
 	private String maLop;
 	private String tenLop;
-	
 	public SinhVien(String maSv, String hoTen, String khoa, String email, String sdt, String diaChi, String maLop,
 			String tenLop) {
 		super();
