@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
@@ -8,22 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 
-public class ExcelLophoc {
+public class ExcelGenerator {
 	private XSSFWorkbook workbook;
 	private XSSFSheet sheet;
-	private List<LopHoc> lophocs;
-	
-	public ExcelLophoc(List<LopHoc> lh) {
-		this.lophocs = lh;
+	private List<SinhVien> sinhviens;
+
+	public ExcelGenerator(List<SinhVien> sv) {
+		this.sinhviens = sv;
 		workbook = new XSSFWorkbook();
 	}
+
 	private void writeHeaderLine() {
-		sheet = workbook.createSheet("Lớp Học");
+		sheet = workbook.createSheet("Sinh Viên");
 
 		Row row = sheet.createRow(0);
 		CellStyle style = workbook.createCellStyle();
@@ -32,15 +36,17 @@ public class ExcelLophoc {
 		font.setFontHeight(16);
 		style.setFont(font);
 		createCell(row, 0, "Stt", style);
-		createCell(row, 1, "Kỳ học", style);
-		createCell(row, 2, "Mã Lớp", style);
-		createCell(row, 3, "Tên Lớp", style);
-		createCell(row, 4, "Tên Môn", style);
-		createCell(row, 5, "Mã Giảng Viên", style);
-		createCell(row, 6, "Tên Giảng viên", style);
-		
+		createCell(row, 1, "Mã sinh viên", style);
+		createCell(row, 2, "Tên sinh viên", style);
+		createCell(row, 3, "Khóa", style);
+		createCell(row, 4, "Email", style);
+		createCell(row, 5, "SĐT", style);
+		createCell(row, 6, "Địa chỉ", style);
+		createCell(row, 7, "Mã lớp", style);
+		createCell(row, 8, "Tên lớp", style);
 
 	}
+
 	private void createCell(Row row, int columnCount, Object value, CellStyle style) {
 		sheet.autoSizeColumn(columnCount);
 		Cell cell = row.createCell(columnCount);
@@ -53,6 +59,7 @@ public class ExcelLophoc {
 		}
 		cell.setCellStyle(style);
 	}
+
 	private void writeDataLines() {
 		int rowcount = 1;
 
@@ -62,18 +69,19 @@ public class ExcelLophoc {
 		style.setFont(font);
 		int index = 1;
 
-		for (LopHoc lh : lophocs) {
+		for (SinhVien sv : sinhviens) {
 			Row row = sheet.createRow(rowcount++);
 			int columnCount = 0;
 
 			createCell(row, columnCount++, index++, style);
-			createCell(row, columnCount++, lh.getTenKy(), style);
-			createCell(row, columnCount++, lh.getMaLop(), style);
-			createCell(row, columnCount++, lh.getTenLop(), style);
-			createCell(row, columnCount++, lh.getTenMon(), style);
-			createCell(row, columnCount++, lh.getMaGv(), style);
-			createCell(row, columnCount++, lh.getHoTen(), style);
-			
+			createCell(row, columnCount++, sv.getMaSv(), style);
+			createCell(row, columnCount++, sv.getHoTen(), style);
+			createCell(row, columnCount++, sv.getKhoa(), style);
+			createCell(row, columnCount++, sv.getEmail(), style);
+			createCell(row, columnCount++, sv.getSdt(), style);
+			createCell(row, columnCount++, sv.getDiaChi(), style);
+			createCell(row, columnCount++, sv.getMaLop(), style);
+			createCell(row, columnCount++, sv.getTenLop(), style);
 //			String formula = "D" + rowcount + " * E" + rowcount + " -G" + rowcount + "+H" + rowcount + "-I" + rowcount
 //					+ "+J" + rowcount + "+K" + rowcount + "L";
 //			row.createCell(8, CellType.FORMULA).setCellFormula(formula);
@@ -81,6 +89,7 @@ public class ExcelLophoc {
 		}
 
 	}
+
 	public void export(HttpServletResponse response) throws IOException {
 		writeHeaderLine();
 		writeDataLines();
@@ -91,4 +100,5 @@ public class ExcelLophoc {
 		outputStream.close();
 		
 	}
+
 }

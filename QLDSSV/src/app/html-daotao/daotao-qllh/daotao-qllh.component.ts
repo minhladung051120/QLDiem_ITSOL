@@ -26,11 +26,6 @@ export class DaotaoQllhComponent implements OnInit {
       this.lophocs = data;
     });
   }
-  clickMethod(name: string) {
-    if(confirm("Bạn chắc chắn muốn xóa? "+name)) {
-        this.deleteLopHoc(name);
-    }
-  }
   deleteLopHoc(maLop) {
     this.servicesService.deleteLopHoc(maLop).subscribe(response =>
      {this.lophocs = this.lophocs.filter(lophoc => lophoc.maLop != maLop);

@@ -69,13 +69,12 @@ public class getLopHocBySv {
 	}
 
 	public getLopHocBySv(String maMon, String tenMon, String maLop, String maKy, float diemTb) {
-		
+		super();
 		this.maMon = maMon;
 		this.tenMon = tenMon;
 		this.maLop = maLop;
 		this.maKy = maKy;
 		this.diemTb = diemTb;
-		
 	}
 
 	

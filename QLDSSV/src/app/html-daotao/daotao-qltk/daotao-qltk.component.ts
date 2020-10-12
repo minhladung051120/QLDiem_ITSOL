@@ -58,14 +58,4 @@ export class DaotaoQLTKComponent implements OnInit {
         break;
     }
   }
-  clickMethod(name: string) {
-    if(confirm("Bạn chắc chắn muốn xóa? "+name)) {
-        this.deleteTaiKhoan(name);
-    }
-  }
-  deleteTaiKhoan(maTk) {
-    this.servicesService.deleteTaiKhoanDt(maTk).subscribe((response) => {
-      this.taikhoans = this.taikhoans.filter((taikhoan) => taikhoan.maTk != maTk);
-    });
-  }
 }

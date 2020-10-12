@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ServicesService {
   private baseUrl = 'http://localhost:8080/';
+  private sinhVienUrl = 'http://localhost:8080/api/sinhvien';
+  private giangVienUrl = 'http://localhost:8080/api/giangvien';
+  private daoTaoUrl = 'http://localhost:8080/api/daotao';
   constructor(
     private http: HttpClient
   ) { }
@@ -26,28 +29,12 @@ export class ServicesService {
     return this.http.get(this.baseUrl+"getTaiKhoan");
   }
 
-  getTaiKhoanId(maTk : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getTaiKhoan/"+maTk);
-  }
-
-  getTaiKhoanGvId(maTk : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getTaiKhoanGvId/"+maTk);
-  }
-
-  getTaiKhoanSvId(maTk : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getTaiKhoanSvId/"+maTk);
-  }
-
   getKyHoc(){
     return this.http.get(this.baseUrl+"getKyHoc");
   }
 
   getKyHocId(maKy : number):Observable<any>{
     return this.http.get(this.baseUrl+"getKyHoc/"+maKy);
-  }
-
-  getLopHocId(maLop : number):Observable<any>{
-    return this.http.get(this.baseUrl+"getLopHocId/"+maLop);
   }
 
   getMonHoc(){
@@ -95,14 +82,6 @@ export class ServicesService {
     return this.http.post(this.baseUrl+"lopHoc",lopHoc);
   }
 
-  createTaiKhoanDt(taiKhoan: Object): Observable<Object>{
-    return this.http.post(this.baseUrl+"createTaiKhoanDt",taiKhoan);
-  }
-
-  createTaiKhoanDb(taiKhoan: Object): Observable<Object>{
-    return this.http.post(this.baseUrl+"createTaiKhoanDb",taiKhoan);
-  }
-
   joinSinhVien(joinSinhVien: Object): Observable<Object>{
     return this.http.post(this.baseUrl+"joinSinhVien",joinSinhVien);
   }
@@ -111,24 +90,16 @@ export class ServicesService {
     return this.http.delete(this.baseUrl+"kyHoc/"+maKy);
   }
 
-  deleteTaiKhoanDt(maTk : number):Observable<any>{
-    return this.http.delete(this.baseUrl+"deleteTaiKhoanDt/"+maTk);
-  }
-
   deleteMonHoc(monHoc : number):Observable<any>{
     return this.http.delete(this.baseUrl+"monHoc/"+monHoc);
   }
 
-  deleteLopHoc(lopHoc : number){
+  deleteLopHoc(lopHoc : number):Observable<any>{
     return this.http.delete(this.baseUrl+"lopHoc/"+lopHoc);
   }
 
   updateKyHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
-  }
-
-  updateLopHoc(kyHoc: Object): Observable<Object>{
-    return this.http.put(this.baseUrl+"updateLopHoc",kyHoc);
   }
 
   searchKyHoc(tenKy : number){
@@ -139,15 +110,18 @@ export class ServicesService {
     return this.http.put(this.baseUrl+"updateMonHoc",monHoc);
   }
 
-  updateTaiKhoan(taiKhoan: Object): Observable<Object>{
-    return this.http.put(this.baseUrl+"updateTaiKhoan",taiKhoan);
-  }
-
-  updateTaiKhoanDb(taiKhoan: Object): Observable<Object>{
-    return this.http.put(this.baseUrl+"updateTaiKhoanDb",taiKhoan);
-  }
-
   searchMonHoc(maMon: number){
     return this.http.get(this.baseUrl+"searchMonHoc/"+maMon);
+  }
+  getSVBoard(): Observable<string>{
+    return this.http.get(this.sinhVienUrl, { responseType: 'text'});
+  }
+
+  getGVBoard(): Observable<string> {
+    return this.http.get(this.giangVienUrl, { responseType: 'text' });
+  }
+
+  getDTBoard(): Observable<string> {
+    return this.http.get(this.daoTaoUrl, { responseType: 'text'});
   }
 }
