@@ -46,6 +46,10 @@ export class ServicesService {
     return this.http.get(this.baseUrl+"getKyHoc/"+maKy);
   }
 
+  getLopHocId(maLop : number):Observable<any>{
+    return this.http.get(this.baseUrl+"getLopHocId/"+maLop);
+  }
+
   getMonHoc(){
     return this.http.get(this.baseUrl+"getMonHoc");
   }
@@ -115,12 +119,16 @@ export class ServicesService {
     return this.http.delete(this.baseUrl+"monHoc/"+monHoc);
   }
 
-  deleteLopHoc(lopHoc : number):Observable<any>{
+  deleteLopHoc(lopHoc : number){
     return this.http.delete(this.baseUrl+"lopHoc/"+lopHoc);
   }
 
   updateKyHoc(kyHoc: Object): Observable<Object>{
     return this.http.put(this.baseUrl+"updateKyHoc",kyHoc);
+  }
+
+  updateLopHoc(kyHoc: Object): Observable<Object>{
+    return this.http.put(this.baseUrl+"updateLopHoc",kyHoc);
   }
 
   searchKyHoc(tenKy : number){

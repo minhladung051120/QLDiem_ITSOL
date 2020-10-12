@@ -27,9 +27,18 @@ public class lophocController {
 	private LopHocRepository lopHocRepository;
 	private BangDiemRepository bangDiemRepository;
 	
+	
 	@GetMapping("/getLopHoc")
 	public List<LopHoc> getLopHoc() {
 		return lopHocRepository.getLopHoc();
+	}
+	
+	@GetMapping("/getLopHocId")
+	public lophoc getLopHocId(@PathVariable(value = "id") String maLop) {
+		System.out.println(maLop);
+		Optional<lophoc> optionalLh = lopHocRepository.findById(maLop);
+		lophoc lh = optionalLh.get();
+		return lh;
 	}
 	
 	@PostMapping("/lopHoc")
@@ -43,12 +52,9 @@ public class lophocController {
 	}
 	
 	@DeleteMapping("/lopHoc/{id}")
-	public Map<String, Boolean> deleteLopHoc(@PathVariable(value = "id") String maLop){
+	public void deleteLopHoc(@PathVariable(value = "id") String maLop){
 		Optional<lophoc> optionalLh = lopHocRepository.findById(maLop);
 		lophoc lh = optionalLh.get();
 		lopHocRepository.delete(lh);
-		Map<String, Boolean> response = new HashMap<>();
-		response.put("deleted", Boolean.TRUE);
-		   return response;
 	}
 }

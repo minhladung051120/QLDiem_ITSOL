@@ -55,7 +55,7 @@ const routes: Routes = [
     {path :"daotao-qldiem" ,component : DaotaoQldiemComponent},
     {path :"danhsach-sv" ,component : DanhsachSVComponent},
     {path :"edit-diem" ,component : EditDiemComponent},
-    {path :"edit-lophoc" ,component : EditLophocComponent},
+    {path :"edit-lophoc/:id" ,component : EditLophocComponent},
     {path :"edit-kyhoc/:id" ,component : EditKyhocComponent},
     {path :"edit-monhoc/:id" ,component : EditMonhocComponent},
     {path :"edit-taikhoan/DT/:id" ,component : EditTaikhoanComponent},
